@@ -4,7 +4,7 @@ import ContactListItem from '../ContactListItem/ContactListItem';
 import { getFilter } from 'store/selectors';
 
 const ContactsList = () => {
-  const contacts = useSelector(state => state.contacts.items);
+  const contacts = useSelector(state => state.contacts);
   const filter = useSelector(getFilter);
 
   const getVisibleContacts = () => {
