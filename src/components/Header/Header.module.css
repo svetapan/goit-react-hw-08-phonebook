@@ -1,0 +1,30 @@
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: rgb(232, 237, 242, 0.95);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+}
+
+.navLink {
+    text-decoration: none;
+    transition: all 300ms ease-out;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+    color: rgb(236, 53, 53);
+}
+
+.navLinkActive {
+    color:rgb(236, 53, 53);;
+}
+
+.navBtn {
+    display: flex;
+    gap: 20px;
+}
