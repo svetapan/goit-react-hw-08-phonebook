@@ -1,19 +1,16 @@
 import { useDispatch} from 'react-redux';
-import { Suspense, lazy, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
-import { useSelector } from 'react-redux';
-import { fetchCurrentUser } from 'store/auth/loginThunk';
+import { fetchCurrentUser} from 'store/auth/loginThunk';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PablicRoute from './PublicRoute/PublicRoute';
-
-const HomePage = lazy(() => import('pages/HomePage'));
-const LogInPage = lazy(() => import('pages/LogInPage'));
-const RegisterPage = lazy(() => import('pages/RegisterPage'));
-const ContactsPage = lazy(() => import('pages/ContactsPage'));
+import HomePage from 'pages/HomePage';
+import LogInPage from 'pages/LogInPage';
+import RegisterPage from 'pages/RegisterPage';
+import ContactsPage from 'pages/ContactsPage';
 
 export default function App() {
-  const {token} = useSelector((state) => state.user)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,13 +19,11 @@ export default function App() {
 
   return (
     <Routes>
-       <Route path='/' element={<Layout />}>
-        <Route index element={<Suspense fallback={<div>Loading...</div>}><HomePage /></Suspense>} />
-         <Route path='/login' element={<Suspense fallback={<div>Loading...</div>}><PablicRoute><LogInPage /></PablicRoute></Suspense>} />
-         <Route path='/register' element={<Suspense fallback={<div>Loading...</div>}><PablicRoute><RegisterPage /></PablicRoute></Suspense>} />
-        {token && (
-          <Route path="/contacts" element={<Suspense fallback={<div>Loading...</div>}><PrivateRoute><ContactsPage /></PrivateRoute></Suspense>} />
-        )}
+      <Route path='/' element={<Layout />}>
+        <Route index element={<HomePage /> } />
+        <Route path='/login' element={<PablicRoute><LogInPage /></PablicRoute>} />
+        <Route path='/register' element={<PablicRoute><RegisterPage /></PablicRoute>} />
+        <Route path="/contacts" element={<PrivateRoute><ContactsPage /></PrivateRoute>} />
       </Route>
     </Routes>
   )

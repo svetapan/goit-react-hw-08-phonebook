@@ -41,7 +41,7 @@ const ContactListItem = ({ contact }) => {
       .then(() => {
         setIsEdit(false);
         dispatch(fetchContacts());
-        toast.success(`${name} has been modified.`);
+        toast.success(`${name} has been changed.`);
       })
       .catch(error => {
         console.log(error);
@@ -51,7 +51,7 @@ const ContactListItem = ({ contact }) => {
 
   const handleCancel = () => {
     setIsEdit(false);
-    toast.success(`${name} has not been modified.`);
+    toast.success(`${name} has not been changed.`);
   };
 
   return (
