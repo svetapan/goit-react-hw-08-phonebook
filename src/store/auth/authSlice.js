@@ -25,7 +25,7 @@ const handleFulfilledProfile = (state, {payload}) => {
 
 const authSlice = createSlice({
   name: 'user',
-  initialState,
+  initialState: initialState.user,
   reducers: {
     logOut(state) {
       state.profile = null;
