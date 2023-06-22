@@ -17,7 +17,7 @@ const ContactsList = () => {
   const visibleContacts = getVisibleContacts();
 
   return (
-    <ul style={{ width: 460, margin: '20px auto' }}>
+    <ul style={{ margin: '20px auto' }}>
       {visibleContacts.map(contact => (
         <ContactListItem key={contact.id} contact={contact} />
       ))}

@@ -1,6 +1,7 @@
 .item {
   display: flex;
   align-items: center;
+  text-align: left;
 }
 
 .item:not(:last-child) {
@@ -13,13 +14,16 @@
   width: 5px;
   margin-right: 5px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .thumbBtn {
+  display: flex;
   margin-left: auto;
 }
 
 .btn {
+  flex-shrink: 0;
   padding: 5px;
   border: 1px solid #122236;
   background-color: transparent;

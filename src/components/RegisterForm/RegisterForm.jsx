@@ -61,7 +61,7 @@ const RegisterForm = () => {
         name="email"
         htmlFor="email"
       />
-      <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+      <FormControl sx={{ m: 0, width: '25ch' }} variant="outlined">
         <InputLabel htmlFor="outlined-adornment-password" name="password">
           Password
         </InputLabel>
